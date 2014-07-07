@@ -1,0 +1,49 @@
+html,body{
+  margin:0px;
+  padding:0px;
+}
+
+.container{
+  background-color:grey;
+  width:100%;
+  height:500px;
+}
+
+.cube{
+  width:100px;
+  height:100px;
+  float:left;
+  margin-left:15px;
+  background-color:green;
+  border-radius: 20px;
+}
+
+.cube.drop{
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  transition-timing-function: cubic-bezier(0,0,1,1);
+  margin-top:300px;
+}
+
+#cube1{
+  background-color:red;
+
+}
+#cube2{
+  background-color:blue;
+
+
+
+
+}
+
+#cube2 span{
+  position:relative;
+  top:50%;
+  left:50%;
+  padding-top:-8px;
+  padding-left:-4.5px;
+}
