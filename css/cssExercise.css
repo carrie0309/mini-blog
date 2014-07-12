@@ -16,6 +16,10 @@ html,body{
   margin-left:15px;
   background-color:green;
   border-radius: 20px;
+  background-image:url('../img/03.JPG');
+  border-radius:10px;
+  background-size: cover;
+  flow-x:hidden;
 }
 
 .cube.drop{
