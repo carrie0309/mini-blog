@@ -3,10 +3,13 @@ var cube1 = document.getElementById('cube1');
 
 buttonRain.onclick = function() {
   var cubes = document.getElementsByClassName('cube');
-  for(var cubeIndex in cubes){
-    cubes[cubeIndex].classList.add('drop');
+  for(var i=0; i<cubes.length; i++){
+     (function(index) {
+        setTimeout(function() {
+           cubes[index].classList.add('drop');
+           }, 1000*index+1000);
+    })(i);
   }
-
 };
 
 // Number
