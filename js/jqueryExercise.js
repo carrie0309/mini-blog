@@ -15,34 +15,64 @@ $("#button-container #btnToggle").on("click", function(event) {
 
 });
 
-function blink(times) {
-  for (var i = 0; i < times; i++) {
-    $("#block").animate({
-      width: "500px",
-      marginLeft: "-250px",
-      fontSize: "5em"
-    }, 1000);
 
-    $("#block").animate({
-      width: "300px",
-      marginLeft: "-150px",
-      fontSize: "3em"
-    }, 1000);
+
+function blink(elementSelector, times) {
+  var element = $(elementSelector);
+  for (var i = 0; i < times; i++) {
+
+    element.animate({
+      width: "700px",
+      // marginLeft: "-250px",
+      fontSize: "5em"
+    }, 1000, function() {
+      $('html,body').animate({
+        scrollTop: element.offset().top
+      });
+    });
+
+
+    element.animate({
+        width: "300px",
+        // marginLeft: "-150px",
+        fontSize: "3em"
+      }, 1000, function() {
+
+      });
+
+    }
+
+
   }
 
-}
+  $("#btnShow").click(function() {
+    blink('#banner-message', 1);
+  });
 
-$("#go").click(function() {
-  $("#block").animate({
-    left: "50%",
-    marginLeft: '-150px'
-  }, 1000);
 
-  blink(3);
+  $("#go").click(function() {
+    var block = $("#block");
+    block.animate({
+      left: "50%",
+      height: "800px",
+      marginLeft: '-150px'
+    }, 1000, function() {
+      console.log('shenxiaoyang');
+    });
 
- $("#block").animate({
-    left: "-350px",
-    // marginLeft: '-150px'
-  }, 1000);
+    blink('#block', 3);
 
-});
+    block.animate({
+      left: "-350px",
+      // marginLeft: '-150px'
+    }, 1000,function(){
+      $('html,body').animate({
+        scrollTop: 0
+      });
+    });
+
+  });
+
+  $(".continue").on("click", function(event) {
+    alert('Please log in first');
+  });
